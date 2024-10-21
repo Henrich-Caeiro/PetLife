@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "br.edu.ifsp.aluno.henrich.petlife"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "br.edu.ifsp.aluno.henrich.petlife"
@@ -38,6 +38,7 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"

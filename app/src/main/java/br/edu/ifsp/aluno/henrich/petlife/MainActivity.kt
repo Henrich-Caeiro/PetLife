@@ -1,6 +1,7 @@
 package br.edu.ifsp.aluno.henrich.petlife
 
 import android.os.Bundle
+import android.widget.EditText
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -15,7 +16,7 @@ import br.edu.ifsp.aluno.henrich.petlife.ui.theme.PetLifeTheme
 
 class MainActivity : ComponentActivity() {
 
-
+    private lateinit var nomeEt: EditText;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +40,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         text = "Hello $name!",
         modifier = modifier
     )
+
 }
 
 @Preview(showBackground = true)
