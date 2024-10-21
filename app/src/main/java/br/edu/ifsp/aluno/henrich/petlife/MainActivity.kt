@@ -14,6 +14,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import br.edu.ifsp.aluno.henrich.petlife.ui.theme.PetLifeTheme
 
 class MainActivity : ComponentActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
