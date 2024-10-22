@@ -7,6 +7,8 @@ import br.edu.ifsp.aluno.henrich.petlife.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var amb: ActivityMainBinding
+
     // Instância do pet (armazenada em memória)
     private var pet = Pet(
         "Rex",
@@ -19,47 +21,45 @@ class MainActivity : AppCompatActivity() {
         "05/10/2023"
     )
 
-    private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        amb = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(amb.root)
 
         // Atualizar a tela principal com os dados do pet
         updateDashboard()
 
         // Botão para editar o pet
-        binding.btnEditPet.setOnClickListener {
-            val intent = Intent(this, EditPetActivity::class.java)
-            intent.putExtra("pet", pet)
-            startActivityForResult(intent, 1)
-        }
+//        amb.btnEditPet.setOnClickListener {
+//            val intent = Intent(this, EditPetActivity::class.java)
+//            intent.putExtra("pet", pet)
+//            startActivityForResult(intent, 1)
+//        }
 
         // Botão para editar última ida ao veterinário
-        binding.btnEditVetVisit.setOnClickListener {
+        amb.btnEditVetVisit.setOnClickListener {
             val intent = Intent(this, EditVetVisitActivity::class.java)
             intent.putExtra("lastVetVisit", pet.lastVetVisit)
             startActivityForResult(intent, 2)
         }
 
         // Botão para editar última vacinação
-        binding.btnEditVaccination.setOnClickListener {
+        amb.btnEditVaccination.setOnClickListener {
             val intent = Intent(this, EditVaccinationActivity::class.java)
             intent.putExtra("lastVaccination", pet.lastVaccination)
-            startActivityForResult(intent, 3)
+//            startActivityForResult(intent, 3)
         }
     }
 
     private fun updateDashboard() {
-        binding.tvPetName.text = pet.name
-        binding.tvPetBirthDate.text = pet.birthDate
-        binding.tvPetType.text = pet.type
-        binding.tvPetColor.text = pet.color
-        binding.tvPetSize.text = pet.size
-        binding.tvLastVetVisit.text = pet.lastVetVisit
-        binding.tvLastVaccination.text = pet.lastVaccination
-        binding.tvLastPetshopVisit.text = pet.lastPetshopVisit
+        amb.tvPetName.text = pet.name
+        amb.tvPetBirthDate.text = pet.birthDate
+        amb.tvPetType.text = pet.type
+        amb.tvPetColor.text = pet.color
+        amb.tvPetSize.text = pet.size
+        amb.tvLastVetVisit.text = pet.lastVetVisit
+        amb.tvLastVaccination.text = pet.lastVaccination
+        amb.tvLastPetshopVisit.text = pet.lastPetshopVisit
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         if (resultCode == RESULT_OK) {
             when (requestCode) {
                 1 -> { // Edição do pet
-                    pet = data?.getSerializableExtra("pet") as Pet
+//                    pet = data?.getSerializableExtra("pet") as Pet
                     updateDashboard()
                 }
                 2 -> { // Edição da última ida ao veterinário

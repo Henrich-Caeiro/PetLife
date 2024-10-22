@@ -31,10 +31,10 @@ class EditPetActivity : AppCompatActivity() {
             pet.color = binding.etPetColor.text.toString()
             pet.size = binding.etPetSize.text.toString()
 
-            val resultIntent = intent
-            resultIntent.putExtra("pet", pet)
-            setResult(RESULT_OK, resultIntent)
-            finish()
+//            val resultIntent = intent
+//            resultIntent.putExtra("pet", pet)
+//            setResult(RESULT_OK, resultIntent)
+//            finish()
         }
     }
 }
