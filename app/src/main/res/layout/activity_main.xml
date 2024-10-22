@@ -1,36 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:text="Nome:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <!-- Nome do pet -->
     <TextView
         android:id="@+id/tvPetName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Nome: Rex"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-    <Button
-        android:id="@+id/btnEditPet"
+    <!-- Data de nascimento -->
+    <TextView
+        android:id="@+id/tvPetBirthDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Editar Pet"/>
+        android:text="Data de Nascimento: 01/01/2020"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvPetName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
 
-    <Button
-        android:id="@+id/btnEditVetVisit"
+    <!-- Tipo de animal -->
+    <TextView
+        android:id="@+id/tvPetType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Editar última ida ao veterinário"/>
+        android:text="Tipo: Cão"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvPetBirthDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
 
-    <Button
-        android:id="@+id/btnEditVaccination"
+    <!-- Cor do pet -->
+    <TextView
+        android:id="@+id/tvPetColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Editar última vacinação"/>
+        android:text="Cor: Marrom"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvPetType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
 
+    <!-- Porte do pet -->
+    <TextView
+        android:id="@+id/tvPetSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Porte: Médio"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvPetColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Última visita ao veterinário -->
+    <TextView
+        android:id="@+id/tvLastVetVisit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Última ida ao Veterinário: 10/10/2023"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvPetSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Última vacinação -->
+    <TextView
+        android:id="@+id/tvLastVaccination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Última Vacinação: 20/09/2023"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvLastVetVisit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Última ida ao petshop -->
+    <TextView
+        android:id="@+id/tvLastPetshopVisit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Última ida ao Petshop: 05/10/2023"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvLastVaccination"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Botões de edição -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tvLastPetshopVisit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <!-- Editar dados do pet -->
+        <Button
+            android:id="@+id/btnEditPet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar Pet" />
+
+        <!-- Editar última ida ao veterinário -->
+        <Button
+            android:id="@+id/btnEditVetVisit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar Última Visita ao Veterinário"
+            android:layout_marginTop="8dp" />
+
+        <!-- Editar última vacinação -->
+        <Button
+            android:id="@+id/btnEditVaccination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar Última Vacinação"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
 </LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Última ida ao veterinário -->
+    <EditText
+        android:id="@+id/etLastVetVisit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Última ida ao Veterinário" />
+
+    <!-- Botão de salvar -->
+    <Button
+        android:id="@+id/btnSaveVetVisit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:layout_marginTop="24dp" />
+
+</LinearLayout>

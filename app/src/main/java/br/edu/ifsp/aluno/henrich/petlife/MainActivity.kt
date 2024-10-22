@@ -27,9 +27,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Atualizar a tela principal com os dados do pet
-//        updateDashboard()
+        updateDashboard()
 
-
+        // Botão para editar o pet
         binding.btnEditPet.setOnClickListener {
             val intent = Intent(this, EditPetActivity::class.java)
             intent.putExtra("pet", pet)
@@ -37,29 +37,29 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Botão para editar última ida ao veterinário
-//        binding.btnEditVetVisit.setOnClickListener {
-//            val intent = Intent(this, EditVetVisitActivity::class.java)
-//            intent.putExtra("lastVetVisit", pet.lastVetVisit)
-//            startActivityForResult(intent, 2)
-//        }
+        binding.btnEditVetVisit.setOnClickListener {
+            val intent = Intent(this, EditVetVisitActivity::class.java)
+            intent.putExtra("lastVetVisit", pet.lastVetVisit)
+            startActivityForResult(intent, 2)
+        }
 
         // Botão para editar última vacinação
-//        binding.btnEditVaccination.setOnClickListener {
-//            val intent = Intent(this, EditVaccinationActivity::class.java)
-//            intent.putExtra("lastVaccination", pet.lastVaccination)
-//            startActivityForResult(intent, 3)
-//        }
+        binding.btnEditVaccination.setOnClickListener {
+            val intent = Intent(this, EditVaccinationActivity::class.java)
+            intent.putExtra("lastVaccination", pet.lastVaccination)
+            startActivityForResult(intent, 3)
+        }
     }
 
-    fun updateDashboard() {
+    private fun updateDashboard() {
         binding.tvPetName.text = pet.name
         binding.tvPetBirthDate.text = pet.birthDate
-//        binding.tvPetType.text = pet.type
-//        binding.tvPetColor.text = pet.color
-//        binding.tvPetSize.text = pet.size
-//        binding.tvLastVetVisit.text = pet.lastVetVisit
-//        binding.tvLastVaccination.text = pet.lastVaccination
-//        binding.tvLastPetshopVisit.text = pet.lastPetshopVisit
+        binding.tvPetType.text = pet.type
+        binding.tvPetColor.text = pet.color
+        binding.tvPetSize.text = pet.size
+        binding.tvLastVetVisit.text = pet.lastVetVisit
+        binding.tvLastVaccination.text = pet.lastVaccination
+        binding.tvLastPetshopVisit.text = pet.lastPetshopVisit
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
